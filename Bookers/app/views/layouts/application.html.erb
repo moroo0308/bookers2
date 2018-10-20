@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+    <div class="container">
+      <nav class="body-main clerafix">
+        <span>Bookers</span>
+      </nav>
+
+      <nav class="header-contents">
+        
+          <% if user_signed_in? %>
+        <li class="header-in">
+          <%= link_to 'Home', users_path(current_user.id) %></li>
+
+        <li class="header-in">
+          <%= link_to 'Users', users_path(current_user.id) %></li>
+
+        <li class="header-in">
+          <%= link_to 'Books', users_path(current_user.id) %></li>
+
+        <li class="header-in">
+          <%= link_to "logout", destroy_user_session_path, method: :delete %></li>
+
+        <% else %>
+
+        <li class="header-in">
+          <%= link_to "Home", top_index_path %></li>
+
+        <li class="header-in">
+          <%= link_to "About", new_top_path %></li>
+
+        <li class="header-in">
+          <%= link_to "Sign up", new_user_registration_path %></li>
+
+        <li class="header-in">
+          <%= link_to "log in", new_user_session_path %>
+        </li>
+
+        <% end %>
+      
+    </nav>
+    </div>
+    </header>
+    <%= yield %>
+  </body>
+</html>
+
