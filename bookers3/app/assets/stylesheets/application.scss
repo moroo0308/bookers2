@@ -24,20 +24,13 @@
   box-sizing: border-box;
   color: #6c6b6b;
 }
-a {
-  text-decoration: none;
-}
+
 .clearfix::after {
   content: "";
   display: block;
   clear: both;
 }
-.container{
-	float:left;
-}
-.main{
-	float:left;
-}
+
 
  .navbar{
  background-color:black;
