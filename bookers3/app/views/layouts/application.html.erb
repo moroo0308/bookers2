@@ -1,57 +1,73 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookers3</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookers3</title>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+  </head> 
 
-  
-    <header>
-    <div class="container">
-      <nav class="body-main clerafix">
-        <span>Bookers</span>
-      </nav>
+  <body>
 
+    <div class="header" id="header">
+      <nav class="navbar navbar-main navbar-shadow" role="navigation" id="slide-nav">
 
-      <nav class="header-contents">
-        
-          <% if user_signed_in? %>
-        <li class="header-in">
-          <%= link_to 'Home', new_user_path %></li>
+        <div class="container relative">
+          <div class="navbar-header">
+            <span>Bookers</span>
+            <a class="navbar-logo" href="/">
+              
+            </a>
+   
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="slidemenu">
 
-        <li class="header-in">
-          <%= link_to 'Users', users_path %></li>
+            <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
+              <% if user_signed_in? %>
+              <li class="">
+                <%= link_to 'Home', new_book_path %></li>
 
-        <li class="header-in">
-          <%= link_to 'Books', books_path %></li>
+              <li class="">
+                <%= link_to 'Users', users_path %></li>
 
-        <li class="header-in">
-          <%= link_to "logout", destroy_user_session_path, method: :delete %></li>
+              <li class="">
+                <%= link_to 'Books', books_path %></li>
 
-        <% else %>
+              <li class="">
+                <%= link_to "logout", destroy_user_session_path, method: :delete %></li>
+                <% else %>
 
-        <li class="header-in">
-          <%= link_to "Home", homes_path %></li>
+              <li class="">
+                <%= link_to "Home", homes_path %></li>
 
-        <li class="header-in">
-          <%= link_to "About", new_home_path %></li>
+              <li class="">
+                <%= link_to "About", new_home_path %></li>
 
-        <li class="header-in">
-          <%= link_to "Sign up", new_user_registration_path %></li>
+              <li class="">
+                <%= link_to "Sign up", new_user_registration_path %></li>
 
-        <li class="header-in">
-          <%= link_to "log in", new_user_session_path %></li>
-
-        <% end %>
-      
-    </nav>
-    </div>
-    </header>
-    
-    <%= yield %>
-  
+              <li class="">
+                <%= link_to "log in", new_user_session_path %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <%= yield %>
+            </body>
+            <footer>
+              <p class="footer-text">CopyRight Infratop.inc<p>
+            </footer>
 </html>

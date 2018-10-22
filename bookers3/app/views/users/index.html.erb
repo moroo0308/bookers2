@@ -1,11 +1,29 @@
 <div class="container">
 	<div class="row">
 			<h2>User Info</h2>
+			<% if user_signed_in? %>
+			<%= current_user.name %>
+			<% end %>
 
 		</div>
-        
-        	
-
+        <div>
+        	<h2>Books</h2>
+        	<table class="table table-striped">
+        		<thead>
+        			<tr>
+        				<th>name</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<% @users.each do |user| %>
+					<tr>
+						<td><%= user.name %></td>
+						<td><%= link_to "show", users_path %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>
