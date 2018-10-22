@@ -25,9 +25,10 @@
 }
 header{
  	background-color: black;
+
  }
 .container{
- 	width: 1170px;
+ 	width: 1440px;
  	height: 70px;
  	margin: 0 auto;
  	padding-top: 20px;
@@ -40,8 +41,6 @@ header{
  }
  .header-contents{
  	text-align: right;
- 	
- 	
  }
 .header-in{
 	display:inline-block;
@@ -50,6 +49,6 @@ header{
 	color: white;
 	text-decoration: none;
 }
-body{
-	text-align: center;
+.body-main{
+  text-align: center;
 }

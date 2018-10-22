@@ -1,0 +1,17 @@
+<h2>Books detail</h2>
+<table>
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Opinion</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><%= @book.title %></td>
+				<td><%= @book.opinion %></td>
+				<td><%= link_to 'Edit', edit_book_path(book), class: "edit_#{books.id}" %></td>
+				<td><%= link_to 'Destroy', book, method: :delete, class: "destroy_#{book.id}", data: { confirm: 'Are you sure?'}  %></td>
+			</tr>
+		</tbody>
+	</table>
