@@ -1,29 +1,25 @@
-<div class="container">
-	<div class="row">
-		<div class="col-lg-3">
-			<h2>User info</h2>
-			<% if user_signed_in? %>
-			<%= current_user.name %>
-			<% end %>
-		</div>
-
-		<div class="col-lg-9">
-			<h2>Books</h2>
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>name</th>
-					</tr>
-				</thead>
-				<tbody>
-					<% @users.each do |user| %>
-					<tr>
-						<td><%= user.name %></td>
-						<td><%= link_to "show", users_path %></td>
-					</tr>
-					<% end %>
-				</tbody>
-			</table>
+<div class="body">
+	<div class="container">
+		<div class="row">
+			<%= render 'users/list', book: @book %>
+			<div class="col-lg-9">
+				<h2>Books</h2>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>name</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @users.each do |user| %>
+						<tr>
+							<td><%= user.name %></td>
+							<td><%= link_to "show", new_book_path %></td>
+						</tr>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
 </div>
