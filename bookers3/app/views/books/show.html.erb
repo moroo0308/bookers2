@@ -14,8 +14,8 @@
 						<tr>
 							<td><%= @book.title %></td>
 							<td><%= @book.opinion %></td>
-							<td><%= link_to "edit", edit_book_path(book) %></td>
-							<td><%= link_to "destroy", edit_book_path(book) %></td>
+							<td><%= link_to "edit", edit_book_path(@book) %></td>
+							<td><%= link_to "destroy", book_path(@book), method: :delete, "data-confirm" => "本当に削除しますか?" %></td>
 						</tr>
 					</tbody>
 				</table>
