@@ -12,7 +12,7 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><%= attachment_image_tag @user, :image, :fill, 50, 50, format: 'jpeg' %></td>
+							<td><%= attachment_image_tag @book.user, :image, :fill, 50, 50, format: 'jpeg' %></td>
 							<td><%= @book.title %></td>
 							<td><%= @book.opinion %></td>
 							<% if @book.user.id == current_user.id %>
