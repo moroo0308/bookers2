@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 		@users = User.all
 		@user = User.new
 		@book = Book.new
+		
 	end
 	
 	def edit
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
 	end
 	private
 	def user_params
-		params.require(:user).permit(:name, :image)	
+		params.require(:user).permit(:name, :image, :introduction)	 
+		                           # :introduction追加
 	end
 end
