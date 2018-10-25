@@ -1,13 +1,12 @@
 <div class="body">
 	<div class="container">
 		<div class="row">
-			<%= render 'users/list', book: @book, user: @book.user %>
+			<%= render 'users/list', book: @book1, user: @book.user  %>
 			<div class="col-lg-9">
 				<h2>Books detail</h2>
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							
 						</tr>
 					</thead>
 					<tbody>
@@ -16,8 +15,8 @@
 							<td><%= @book.title %></td>
 							<td><%= @book.opinion %></td>
 							<% if @book.user.id == current_user.id %>
-							<td><%= link_to "edit", edit_book_path(@book) %></td>
-							<td><%= link_to "destroy", book_path(@book), method: :delete, "data-confirm" => "本当に削除しますか?" %></td>
+							<td><%= link_to "edit", edit_book_path(@book), class: "btn btn-success btn-xs" %></td>
+							<td><%= link_to "destroy", book_path(@book), method: :delete, class: "btn btn-danger btn-xs", "data-confirm" => "本当に削除しますか?" %></td>
 							<% end %>
 						</tr>
 					</tbody>
