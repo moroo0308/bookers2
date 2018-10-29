@@ -18,11 +18,7 @@
 
 				<h2>User info</h2>
 
-				<% if user_signed_in? %>
-				<%= attachment_image_tag user, :image, :fill, 100, 100, format: 'jpeg' %>
-				<%else%>
-				<%= attachment_image_tag user, :image, :fill, 100, 100, format: 'jpeg' %>
-				<% end %>
+				<%= attachment_image_tag user, :image, :fill, 100, 100, format: 'jpeg',fallback: 'no_imag.jpg' %>
 				<table class="table table-striped">
 					<thead>
 						<tr>
